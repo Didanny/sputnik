@@ -29,12 +29,12 @@ if(BUILD_TEST)
   set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -DSPUTNIK_BUILD_TEST")
 endif()
 
-create_cuda_gencode_flags(CUDA_GENCODE_FLAGS ${CUDA_ARCHS})
+create_cuda_gencode_flags(CUDA_GENCODE_FLAGS 35 50 72)
 set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} ${CUDA_GENCODE_FLAGS}")
 
 ##
 ### Project build.
 ##
 
-include_directories("${PROJECT_SOURCE_DIR}")
+include_directories("${PROJECT_SOURCE_DIR}" "${GLOG_INCLUDE_DIR}")
 add_subdirectory(sputnik)
