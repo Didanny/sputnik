@@ -1,8 +1,0 @@
-import torch
-from torch.utils.cpp_extension import load
-
-spmm = load(name='spmm', 
-            sources=['cuda_spmm.cu'],
-            extra_include_paths=['/home/dannya1/sputnik'],
-            with_cuda=True,
-            verbose=True)
